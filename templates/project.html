@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ project.title }} | Project Detail</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💼</text></svg>">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+    <div class="blob-bg"></div>
+    <div class="blob-bg blob-bg-2"></div>
+
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="/" class="logo">Vipul<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="/">Back to Home</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main style="padding-top: 150px; min-height: 80vh;">
+        <div class="section-padding" style="max-width: 900px; margin: 0 auto; text-align: center;">
+            <h1 style="font-size: 3rem; margin-bottom: 10px;">{{ project.title }}</h1>
+            <p style="color: var(--accent-1); font-size: 1.2rem; margin-bottom: 40px; font-weight: 600;">{{
+                project.category }}</p>
+
+            <div
+                style="border-radius: 20px; overflow: hidden; margin-bottom: 40px; border: 1px solid var(--glass-border); box-shadow: 0 20px 40px rgba(0,0,0,0.3);">
+                <img src="{{ project.image }}" alt="{{ project.title }}"
+                    style="width: 100%; height: auto; display: block;">
+            </div>
+
+            <p style="font-size: 1.2rem; color: var(--text-secondary); line-height: 1.8; text-align: left;">
+                {{ project.description }}
+            </p>
+
+            <div style="margin-top: 50px; display: flex; gap: 20px; justify-content: center;">
+                <a href="/category/{{ category_id }}" class="btn btn-secondary">← Back to Category</a>
+                {% if project.demo_link %}
+                <a href="{{ project.demo_link }}" class="btn btn-primary" target="_blank">View Project</a>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Vipul Yadav. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>

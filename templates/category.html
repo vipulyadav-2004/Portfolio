@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ info.title }} | Projects</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💼</text></svg>">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="blob-bg"></div>
+    <div class="blob-bg blob-bg-2"></div>
+
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="/" class="logo">Vipul<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="/">Back to Home</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main style="padding-top: 150px; min-height: 80vh;">
+        <div class="section-padding" style="max-width: 1400px; margin: 0 auto;">
+            <div style="text-align: center; margin-bottom: 60px;">
+                <h1 style="font-size: 3.5rem; margin-bottom: 15px;">{{ info.title }}</h1>
+                <p style="font-size: 1.2rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">{{ info.description }}</p>
+            </div>
+            
+            <div class="works-grid">
+                {% for project in projects %}
+                <div class="work-card">
+                    <div class="work-image">
+                        <img src="{{ project.image }}" alt="{{ project.title }}">
+                        <div class="work-overlay">
+                            <a href="/project/{{ project.id }}" class="view-btn">View Project</a>
+                        </div>
+                    </div>
+                    <div class="work-info">
+                        <h3>{{ project.title }}</h3>
+                        <p>{{ project.category }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <div style="margin-top: 60px; text-align: center;">
+                <a href="/#works" class="btn btn-secondary">← Back to Categories</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Vipul Yadav. All rights reserved.</p>
+    </footer>
+</body>
+</html>
