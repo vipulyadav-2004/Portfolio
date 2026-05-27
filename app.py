@@ -96,7 +96,7 @@ PROJECTS = {
             'title': 'PhonePe Pulse Visualization',
             'category': 'Data Visualization / Interactive Dashboard',
             'description': 'An interactive visualization suite that renders India-wide transaction metrics and trends utilizing PhonePe open pulse data.',
-            'image': 'assets/images/Phone pe.webp',
+            'image': 'assets/images/Phonepe.webp',
             'demo_link': '#'
         },
         {
