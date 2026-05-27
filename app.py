@@ -43,7 +43,7 @@ PROJECTS = {
             'title': ' Handwritten Digit Classification',
             'category': 'SVM(Support Vector Machine) & Vision',
             'description': 'A neural network architecture developed to classify handwritten digits with high accuracy using standard datasets.',
-            'image': 'assets/images/Screenshot 2026-03-05 222854.png',
+            'image': 'assets/images/Screenshot2026-03-05 222854.png',
             'demo_link': 'https://github.com/vipulyadav-2004/Handwritten-digit-classification'
         },
         {
