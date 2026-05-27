@@ -43,7 +43,6 @@ PROJECTS = {
             'title': ' Handwritten Digit Classification',
             'category': 'SVM(Support Vector Machine) & Vision',
             'image': 'https://images.unsplash.com/photo-1564630322990-4a9e93d13946?q=80&w=2070&auto=format&fit=crop',
-            'image': 'assets/images/Screenshot2026-03-05_222854.png',
             'demo_link': 'https://github.com/vipulyadav-2004/Handwritten-digit-classification'
         },
         {
