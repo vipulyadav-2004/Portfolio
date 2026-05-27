@@ -31,7 +31,11 @@
                 {% for project in projects %}
                 <div class="work-card">
                     <div class="work-image">
+                        {% if project.image.startswith('http') %}
                         <img src="{{ project.image }}" alt="{{ project.title }}">
+                        {% else %}
+                        <img src="{{ url_for('static', filename=project.image) }}" alt="{{ project.title }}">
+                        {% endif %}
                         <div class="work-overlay">
                             <a href="/project/{{ project.id }}" class="view-btn">View Project</a>
                         </div>

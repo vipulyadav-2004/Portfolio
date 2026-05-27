@@ -31,8 +31,12 @@
 
             <div
                 style="border-radius: 20px; overflow: hidden; margin-bottom: 40px; border: 1px solid var(--glass-border); box-shadow: 0 20px 40px rgba(0,0,0,0.3);">
-                <img src="{{ project.image }}" alt="{{ project.title }}"
+                {% if project.image.startswith('http') %}
+                <img src="{{ project.image }}" alt="{{ project.title }}" style="width: 100%; height: auto; display: block;">
+                {% else %}
+                <img src="{{ url_for('static', filename=project.image) }}" alt="{{ project.title }}"
                     style="width: 100%; height: auto; display: block;">
+                {% endif %}
             </div>
 
             <p style="font-size: 1.2rem; color: var(--text-secondary); line-height: 1.8; text-align: left;">

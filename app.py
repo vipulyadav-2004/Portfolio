@@ -43,7 +43,7 @@ PROJECTS = {
             'title': ' Handwritten Digit Classification',
             'category': 'SVM(Support Vector Machine) & Vision',
             'description': 'A neural network architecture developed to classify handwritten digits with high accuracy using standard datasets.',
-            'image': '/static/assets/images/Screenshot%202026-03-05%20222854.png',
+            'image': 'assets/images/Screenshot 2026-03-05 222854.png',
             'demo_link': 'https://github.com/vipulyadav-2004/Handwritten-digit-classification'
         },
         {
@@ -61,7 +61,7 @@ PROJECTS = {
             'title': 'Ayushara',
             'category': 'A Dedicated Platform for Writers and Poets',
             'description': 'A full-stack web application tailored for writers and poets to publish their work and build an audience.',
-            'image': '/static/assets/images/Ayushara.png',
+            'image': 'assets/images/Ayushara.png',
             'demo_link': '#'
         },
         {
@@ -96,7 +96,7 @@ PROJECTS = {
             'title': 'PhonePe Pulse Visualization',
             'category': 'Data Visualization / Interactive Dashboard',
             'description': 'An interactive visualization suite that renders India-wide transaction metrics and trends utilizing PhonePe open pulse data.',
-            'image': '/static/assets/images/Phone%20pe.webp',
+            'image': 'assets/images/Phone pe.webp',
             'demo_link': '#'
         },
         {
