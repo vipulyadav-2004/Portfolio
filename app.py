@@ -78,16 +78,9 @@ PROJECTS = {
             'category': 'Frontend / HTML, CSS, JS',
             'description': 'A dynamic weather forecasting application built purely with HTML, CSS, and Vanilla JavaScript, integrating asynchronous live API data.',
             'image': 'https://images.unsplash.com/photo-1592210454359-9043f067919b?q=80&w=2070&auto=format&fit=crop',
-            'demo_link': '#'
+            'demo_link': 'https://collaborative-todo-uagn.onrender.com/'
         },
-        {
-            'id': 'currency-converter',
-            'title': 'Currency Converter',
-            'category': 'Frontend / HTML, CSS, JS',
-            'description': 'A sleek, real-time currency conversion tool built with HTML, CSS, and JavaScript, leveraging live exchange rate endpoints.',
-            'image': 'https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?q=80&w=2070&auto=format&fit=crop',
-            'demo_link': '#'
-        }
+      
     ],
     'internship-work': [
         {
@@ -112,6 +105,22 @@ PROJECTS = {
             'category': 'EDA + SQL + Dashboard',
             'description': 'An end-to-end data pipeline containing exploratory data analysis (EDA), advanced SQL querying, and a final BI dashboard tracking global game sales.',
             'image': 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop',
+            'demo_link': '#'
+        },
+         {
+            'id': 'bird-species-analysis',
+            'title': 'Birds Species Analysis',
+            'category': 'EDA + SQL + Streamlit',
+            'description': 'An end-to-end data pipeline containing exploratory data analysis (EDA), advanced SQL querying, and a final streamlit dashboard tracking global birds species.',
+            'image': 'https://unsplash.com/photos/gray-and-black-mallard-ducks-flying-during-day-time-WPmPsdX2ySw?q=80&w=2070&auto=format&fit=crop',
+            'demo_link': '#'
+        },
+         {
+            'id': 'food-waste-management',
+            'title': 'Food Waste Management',
+            'category': 'EDA + SQL + Streamlit',
+            'description': 'An end-to-end data pipeline containing exploratory data analysis (EDA), advanced SQL querying, and a final streamlit web for food waste management.',
+            'image': 'https://unsplash.com/photos/selective-focus-photography-of-tray-of-food-ui-Bh1eegzQ?q=80&w=2070&auto=format&fit=crop',
             'demo_link': '#'
         }
     ]
