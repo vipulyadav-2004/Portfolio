@@ -22,6 +22,7 @@ def send_contact_email(name, sender_contact, message):
         msg['From'] = sender
         msg['To'] = receiver
         msg['Subject'] = f"New Portfolio Contact Form Submission from {name}"
+        msg['Reply-To'] = sender_contact
         
         body = f"New message received from your portfolio contact form:\n\nName: {name}\nEmail: {sender_contact}\n\nMessage:\n{message}"
         msg.attach(MIMEText(body, 'plain'))
