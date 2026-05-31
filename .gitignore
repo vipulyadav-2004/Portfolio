@@ -12,7 +12,7 @@ ENV/
 # Environment variable files
 .env
 .env.*
-.env.example
+.envexample
 .flaskenv
 
 # Flask runtime files

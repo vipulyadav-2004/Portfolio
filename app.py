@@ -1,8 +1,11 @@
 from flask import Flask, render_template, request, jsonify
+from dotenv import load_dotenv
 import os
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
+
+load_dotenv()
 
 app = Flask(__name__)
 app.debug = True
