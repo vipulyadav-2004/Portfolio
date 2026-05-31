@@ -34,6 +34,7 @@ PROJECTS = {
             'id': 'house-price-prediction',
             'title': 'House Price Prediction',
             'category': 'Regression Models',
+            'subcategory': 'ml',
             'description': 'A robust machine learning model to predict house prices based on multiple housing features and geographic data.',
             'image': 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop',
             'demo_link': 'https://github.com/vipulyadav-2004/House_price_prediction_ames'
@@ -42,6 +43,8 @@ PROJECTS = {
             'id': 'digit-classification',
             'title': ' Handwritten Digit Classification',
             'category': 'SVM(Support Vector Machine) & Vision',
+            'subcategory': 'cv',
+            'description': 'A classification model utilizing Support Vector Machines (SVM) and OpenCV for recognizing handwritten digits. Employs morphological processing for image cleaning and grid-segmentation to improve recognition accuracy.',
             'image': 'https://images.unsplash.com/photo-1564630322990-4a9e93d13946?q=80&w=2070&auto=format&fit=crop',
             'demo_link': 'https://github.com/vipulyadav-2004/Handwritten-digit-classification'
         },
@@ -49,9 +52,37 @@ PROJECTS = {
             'id': 'cluster-segmentation',
             'title': 'Cluster Segmentation - RFM',
             'category': 'Unsupervised Learning - Clusters and KNN',
+            'subcategory': 'ml',
             'description': 'An analytics project using clustering algorithms to segment customers and discover underlying trends in unlabeled data.',
             'image': 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop',
             'demo_link': 'https://github.com/vipulyadav-2004/Customer-Segmentation-RFM'
+        },
+        {
+            'id': 'netflix-eda',
+            'title': 'Netflix Movies & TV Shows EDA',
+            'category': 'Exploratory Data Analysis & Visualization',
+            'subcategory': 'eda',
+            'description': 'An in-depth exploratory data analysis of Netflix content dataset. Cleansed and structured the raw dataset to extract insights regarding content growth over the years, geographic distribution of titles, and genre preferences using Matplotlib and Seaborn.',
+            'image': 'https://images.unsplash.com/photo-1574375927938-d5a98e8edd86?q=80&w=2070&auto=format&fit=crop',
+            'demo_link': 'https://github.com/vipulyadav-2004/Netflix-Data-Analysis'
+        },
+        {
+            'id': 'sentiment-analyzer',
+            'title': 'BERT Sentiment Analyzer',
+            'category': 'Natural Language Processing',
+            'subcategory': 'nlp',
+            'description': 'A Natural Language Processing model utilizing fine-tuned BERT (Bidirectional Encoder Representations from Transformers) to perform sentiment analysis on movie and product reviews. Built using PyTorch and Hugging Face library, achieving high classification accuracy.',
+            'image': 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop',
+            'demo_link': 'https://github.com/vipulyadav-2004/Sentiment-Analysis'
+        },
+        {
+            'id': 'brain-tumor-segmentation',
+            'title': 'Brain Tumor MRI Segmentation',
+            'category': 'Deep Learning / Medical Image Vision',
+            'subcategory': 'deep-learning',
+            'description': 'A medical image segmentation pipeline utilizing a deep Convolutional Neural Network (U-Net) to identify and segment brain tumors in MRI scans. Optimized using dice loss and binary cross-entropy, delivering high intersection-over-union scores for medical diagnostics.',
+            'image': 'https://images.unsplash.com/photo-1559757175-5700dde675bc?q=80&w=2070&auto=format&fit=crop',
+            'demo_link': 'https://github.com/vipulyadav-2004/Brain-Tumor-Segmentation'
         }
     ],
     'web-development': [

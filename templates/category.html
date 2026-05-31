@@ -27,9 +27,20 @@
                 <p style="font-size: 1.2rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">{{ info.description }}</p>
             </div>
             
+            {% if category_id == 'data-science' %}
+            <div class="filter-tabs-container">
+                <button class="filter-tab active" data-filter="all">All <span class="count">{{ projects|length }}</span></button>
+                <button class="filter-tab" data-filter="eda">EDA <span class="count">{{ projects|selectattr('subcategory', 'equalto', 'eda')|list|length }}</span></button>
+                <button class="filter-tab" data-filter="ml">ML <span class="count">{{ projects|selectattr('subcategory', 'equalto', 'ml')|list|length }}</span></button>
+                <button class="filter-tab" data-filter="nlp">NLP <span class="count">{{ projects|selectattr('subcategory', 'equalto', 'nlp')|list|length }}</span></button>
+                <button class="filter-tab" data-filter="cv">CV <span class="count">{{ projects|selectattr('subcategory', 'equalto', 'cv')|list|length }}</span></button>
+                <button class="filter-tab" data-filter="deep-learning">Deep Learning <span class="count">{{ projects|selectattr('subcategory', 'equalto', 'deep-learning')|list|length }}</span></button>
+            </div>
+            {% endif %}
+            
             <div class="works-grid">
                 {% for project in projects %}
-                <div class="work-card">
+                <div class="work-card" data-subcategory="{{ project.subcategory|default('') }}">
                     <div class="work-image">
                         {% if project.image.startswith('http') %}
                         <img src="{{ project.image }}" alt="{{ project.title }}">
@@ -57,5 +68,53 @@
     <footer>
         <p>&copy; 2026 Vipul Yadav. All rights reserved.</p>
     </footer>
+
+    {% if category_id == 'data-science' %}
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.filter-tab');
+            const cards = document.querySelectorAll('.work-card');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    if (tab.classList.contains('active')) return;
+                    
+                    // Update active tab class
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+                    
+                    const filterValue = tab.getAttribute('data-filter');
+                    
+                    // Step 1: Fade out all currently visible cards
+                    cards.forEach(card => {
+                        card.classList.add('fade-out');
+                    });
+                    
+                    // Step 2: After fade out completes, change visibility/layout
+                    setTimeout(() => {
+                        cards.forEach(card => {
+                            const subcat = card.getAttribute('data-subcategory');
+                            if (filterValue === 'all' || subcat === filterValue) {
+                                card.style.display = '';
+                            } else {
+                                card.style.display = 'none';
+                            }
+                        });
+                        
+                        // Step 3: Trigger a tiny reflow and fade in the visible ones
+                        setTimeout(() => {
+                            cards.forEach(card => {
+                                const subcat = card.getAttribute('data-subcategory');
+                                if (filterValue === 'all' || subcat === filterValue) {
+                                    card.classList.remove('fade-out');
+                                }
+                            });
+                        }, 50);
+                    }, 300);
+                });
+            });
+        });
+    </script>
+    {% endif %}
 </body>
 </html>
