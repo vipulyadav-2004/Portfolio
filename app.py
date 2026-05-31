@@ -1,8 +1,41 @@
 from flask import Flask, render_template, request, jsonify
+import os
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 
 app = Flask(__name__)
 app.debug = True
 app.config['TEMPLATES_AUTO_RELOAD'] = True
+
+def send_contact_email(name, sender_contact, message):
+    receiver = os.environ.get('RECEIVER_EMAIL', 'yadavvipul707@gmail.com')
+    sender = os.environ.get('SENDER_EMAIL')
+    password = os.environ.get('SENDER_PASSWORD')
+    
+    if not sender or not password:
+        print("SMTP Credentials not set (SENDER_EMAIL / SENDER_PASSWORD). Logging submission to console.")
+        return False
+        
+    try:
+        msg = MIMEMultipart()
+        msg['From'] = sender
+        msg['To'] = receiver
+        msg['Subject'] = f"New Portfolio Contact Form Submission from {name}"
+        
+        body = f"New message received from your portfolio contact form:\n\nName: {name}\nEmail: {sender_contact}\n\nMessage:\n{message}"
+        msg.attach(MIMEText(body, 'plain'))
+        
+        server = smtplib.SMTP('smtp.gmail.com', 587)
+        server.starttls()
+        server.login(sender, password)
+        server.sendmail(sender, receiver, msg.as_string())
+        server.quit()
+        print(f"Email sent successfully to {receiver}")
+        return True
+    except Exception as e:
+        print(f"Error sending email: {e}")
+        return False
 
 @app.route('/')
 def home():
@@ -18,13 +51,15 @@ def contact():
     email = data.get('email')
     message = data.get('message')
     
-    # Normally you would save this to a database or send an email here.
     print("-" * 40)
     print("New Contact Form Submission:")
     print(f"Name:    {name}")
     print(f"Email:   {email}")
     print(f"Message: {message}")
     print("-" * 40)
+    
+    # Send email notification
+    send_contact_email(name, email, message)
     
     return jsonify({"success": True, "message": "Message sent successfully!"})
     
