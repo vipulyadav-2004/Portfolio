@@ -37,12 +37,8 @@
                 {% endif %}
                 <div class="project-image-overlay">
                     <div class="project-overlay-buttons">
-                        {% if project.demo_link and project.demo_link != '#' %}
-                        <a href="{{ project.demo_link }}" class="btn btn-primary" target="_blank">View Project</a>
-                        {% endif %}
-                        {% if project.code_link and project.code_link != '#' %}
+                        <a href="{{ project.demo_link if (project.demo_link and project.demo_link != '#') else project.code_link }}" class="btn btn-primary" target="_blank">View Project</a>
                         <a href="{{ project.code_link }}" class="btn btn-secondary" target="_blank">View Code</a>
-                        {% endif %}
                     </div>
                 </div>
             </div>
