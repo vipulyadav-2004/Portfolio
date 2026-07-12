@@ -224,7 +224,7 @@ PROJECTS = {
             'category': 'Machine Learning - NLP',
             'description': 'An intelligent resume screening application that ranks and filters candidate resumes using TF-IDF vectorization and Sentence Transformers for semantic similarity matching, streamlining the recruitment pipeline.',
             'image': 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=2070&auto=format&fit=crop',
-            'demo_link': 'https://resume-screening-app-plum.vercel.app/',
+            'demo_link': 'https://resume-screening-app-plum.vercel.app',
             'code_link': 'https://github.com/vipulyadav-2004/Resume_screening_app'
         },
         {
@@ -233,7 +233,7 @@ PROJECTS = {
             'category': 'OpenCV & Deep Learning',
             'description': 'A real-time face mask detection system combining OpenCV Cascade Classifiers for face localization with a neural network built using PyTorch\'s nn module and Torchvision for mask/no-mask classification on live video feeds.',
             'image': 'https://images.unsplash.com/photo-1585559604959-6388fe69c92a?q=80&w=2070&auto=format&fit=crop',
-            'demo_link': 'https://face-mask-detector-gold.vercel.app/',
+            'demo_link': 'https://face-mask-detector-gold.vercel.app',
             'code_link': 'https://github.com/vipulyadav-2004/Face_mask_detector'
         }
     ],
