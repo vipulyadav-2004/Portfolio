@@ -1,7 +1,10 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, redirect, url_for
 from dotenv import load_dotenv
 import os
 import smtplib
+import re
+from time import time
+from collections import defaultdict, deque
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
@@ -11,14 +14,42 @@ app = Flask(__name__)
 app.debug = True
 app.config['TEMPLATES_AUTO_RELOAD'] = True
 
+RATE_LIMIT_WINDOW_SECONDS = int(os.environ.get('CONTACT_RATE_WINDOW_SECONDS', '300'))
+RATE_LIMIT_MAX_REQUESTS = int(os.environ.get('CONTACT_RATE_MAX_REQUESTS', '5'))
+contact_rate_buckets = defaultdict(deque)
+
+
+def get_client_ip():
+    forwarded_for = request.headers.get('X-Forwarded-For', '')
+    if forwarded_for:
+        return forwarded_for.split(',')[0].strip()
+    return request.remote_addr or 'unknown'
+
+
+def is_rate_limited(client_ip):
+    now = time()
+    bucket = contact_rate_buckets[client_ip]
+    while bucket and now - bucket[0] > RATE_LIMIT_WINDOW_SECONDS:
+        bucket.popleft()
+    if len(bucket) >= RATE_LIMIT_MAX_REQUESTS:
+        return True
+    bucket.append(now)
+    return False
+
+
+def is_valid_email(email):
+    return bool(re.match(r"^[^@\s]+@[^@\s]+\.[^@\s]+$", email or ""))
+
 def send_contact_email(name, sender_contact, message):
     receiver = os.environ.get('RECEIVER_EMAIL', 'yadavvipul707@gmail.com')
     sender = os.environ.get('SENDER_EMAIL')
     password = os.environ.get('SENDER_PASSWORD')
+    smtp_host = os.environ.get('SMTP_HOST', 'smtp.gmail.com')
+    smtp_port = int(os.environ.get('SMTP_PORT', '587'))
     
     if not sender or not password:
         print("SMTP Credentials not set (SENDER_EMAIL / SENDER_PASSWORD). Logging submission to console.")
-        return False
+        return False, "Email service is not configured yet."
         
     try:
         msg = MIMEMultipart()
@@ -30,16 +61,16 @@ def send_contact_email(name, sender_contact, message):
         body = f"New message received from your portfolio contact form:\n\nName: {name}\nEmail: {sender_contact}\n\nMessage:\n{message}"
         msg.attach(MIMEText(body, 'plain'))
         
-        server = smtplib.SMTP('smtp.gmail.com', 587)
+        server = smtplib.SMTP(smtp_host, smtp_port, timeout=15)
         server.starttls()
         server.login(sender, password)
         server.sendmail(sender, receiver, msg.as_string())
         server.quit()
         print(f"Email sent successfully to {receiver}")
-        return True
+        return True, "Message sent successfully!"
     except Exception as e:
         print(f"Error sending email: {e}")
-        return False
+        return False, "Could not send email right now. Please try again later."
 
 @app.route('/')
 def home():
@@ -47,25 +78,60 @@ def home():
 
 @app.route('/api/contact', methods=['POST'])
 def contact():
-    data = request.get_json()
-    if not data:
-        return jsonify({"success": False, "message": "No data provided"}), 400
-        
-    name = data.get('name')
-    email = data.get('email')
-    message = data.get('message')
+    is_json_request = request.is_json
+    client_ip = get_client_ip()
+
+    if is_json_request:
+        data = request.get_json(silent=True) or {}
+    else:
+        data = request.form.to_dict()
+
+    name = (data.get('name') or '').strip()
+    email = (data.get('email') or '').strip()
+    message = (data.get('message') or '').strip()
+    website = (data.get('website') or '').strip()
+
+    if website:
+        success_message = "Message sent successfully!"
+        if is_json_request:
+            return jsonify({"success": True, "message": success_message}), 200
+        return redirect(url_for('home', _anchor='contact', contact_status='success', contact_message=success_message))
+
+    if is_rate_limited(client_ip):
+        error_message = "Too many requests. Please wait a few minutes and try again."
+        if is_json_request:
+            return jsonify({"success": False, "message": error_message}), 429
+        return redirect(url_for('home', _anchor='contact', contact_status='error', contact_message=error_message))
+
+    if not name or not email or not message:
+        error_message = "Please fill in name, email, and message."
+        if is_json_request:
+            return jsonify({"success": False, "message": error_message}), 400
+        return redirect(url_for('home', _anchor='contact', contact_status='error', contact_message=error_message))
+
+    if not is_valid_email(email):
+        error_message = "Please enter a valid email address."
+        if is_json_request:
+            return jsonify({"success": False, "message": error_message}), 400
+        return redirect(url_for('home', _anchor='contact', contact_status='error', contact_message=error_message))
     
     print("-" * 40)
     print("New Contact Form Submission:")
+    print(f"IP:      {client_ip}")
     print(f"Name:    {name}")
     print(f"Email:   {email}")
     print(f"Message: {message}")
     print("-" * 40)
     
     # Send email notification
-    send_contact_email(name, email, message)
-    
-    return jsonify({"success": True, "message": "Message sent successfully!"})
+    sent, result_message = send_contact_email(name, email, message)
+
+    if is_json_request:
+        status_code = 200 if sent else 500
+        return jsonify({"success": sent, "message": result_message}), status_code
+
+    redirect_status = 'success' if sent else 'error'
+    return redirect(url_for('home', _anchor='contact', contact_status=redirect_status, contact_message=result_message))
     
 PROJECTS = {
     'data-science': [
@@ -242,4 +308,7 @@ def project_detail(project_id):
             if p['id'] == project_id:
                 return render_template('project.html', project=p, category_id=category_id)
     abort(404)
+
+
+if __name__ == '__main__':
     app.run(debug=True, port=5000)

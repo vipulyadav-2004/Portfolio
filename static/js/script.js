@@ -50,10 +50,26 @@ document.addEventListener('DOMContentLoaded', () => {
     // Backend form submission
     const form = document.querySelector('.contact-form');
     if(form) {
+        const statusEl = document.getElementById('contactStatus');
+
+        if (statusEl) {
+            const initialStatus = statusEl.dataset.status;
+            if (initialStatus === 'success') {
+                statusEl.style.color = '#10b981';
+            } else if (initialStatus === 'error') {
+                statusEl.style.color = '#ef4444';
+            }
+        }
+
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
             const btn = form.querySelector('.submit-btn');
             const originalText = btn.textContent;
+
+            if (statusEl) {
+                statusEl.textContent = '';
+                statusEl.style.color = 'var(--text-secondary)';
+            }
             
             btn.textContent = 'Sending...';
             btn.style.opacity = '0.8';
@@ -62,7 +78,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const payload = {
                 name: document.getElementById('name').value,
                 email: document.getElementById('email').value,
-                message: document.getElementById('message').value
+                message: document.getElementById('message').value,
+                website: document.getElementById('website') ? document.getElementById('website').value : ''
             };
             
             try {
@@ -81,23 +98,36 @@ document.addEventListener('DOMContentLoaded', () => {
                     btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
                     btn.style.boxShadow = '0 10px 20px rgba(16, 185, 129, 0.2)';
                     btn.style.opacity = '1';
+                    if (statusEl) {
+                        statusEl.textContent = data.message || 'Your message has been sent.';
+                        statusEl.style.color = '#10b981';
+                    }
                     form.reset();
                 } else {
                     btn.textContent = 'Error sending message';
                     btn.style.background = 'linear-gradient(135deg, #ef4444, #dc2626)';
                     btn.style.opacity = '1';
+                    if (statusEl) {
+                        statusEl.textContent = (data && data.message) || 'Failed to send message.';
+                        statusEl.style.color = '#ef4444';
+                    }
                 }
             } catch (error) {
                 console.error('Error:', error);
                 btn.textContent = 'Error sending message';
                 btn.style.background = 'linear-gradient(135deg, #ef4444, #dc2626)';
                 btn.style.opacity = '1';
+                if (statusEl) {
+                    statusEl.textContent = 'Network error. Please try again.';
+                    statusEl.style.color = '#ef4444';
+                }
             }
             
             setTimeout(() => {
                 btn.textContent = originalText;
                 btn.style.background = ''; 
                 btn.style.boxShadow = '';
+                btn.style.opacity = '1';
                 btn.style.pointerEvents = 'auto';
             }, 3000);
         });

@@ -273,7 +273,11 @@
             <div class="contact-box">
                 <h2>Let's build something <span class="gradient-text">incredible</span></h2>
                 <p>Are you looking for a creative developer to bring your idea to life? Let's connect!</p>
-                <form class="contact-form" id="contactForm">
+                <form class="contact-form" id="contactForm" action="/api/contact" method="post">
+                    <div style="position: absolute; left: -5000px; top: auto; width: 1px; height: 1px; overflow: hidden;" aria-hidden="true">
+                        <label for="website">Leave this field empty</label>
+                        <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+                    </div>
                     <div class="input-group">
                         <input type="text" id="name" name="name" placeholder="Your Name" required>
                     </div>
@@ -284,6 +288,7 @@
                         <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary submit-btn">Send Message</button>
+                    <p id="contactStatus" data-status="{{ request.args.get('contact_status', '') }}" aria-live="polite" style="margin-top: 12px; min-height: 24px; color: var(--text-secondary);">{{ request.args.get('contact_message', '') }}</p>
                 </form>
             </div>
         </section>
