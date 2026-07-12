@@ -42,7 +42,7 @@
                 </div>
             </div>
             <div class="hero-image fade-in">
-                    <div class="image-wrapper">
+                <div class="image-wrapper">
                     <img src="{{ url_for('static', filename='assets/images/mypic.png') }}" alt="Vipul Yadav">
                 </div>
             </div>
@@ -112,23 +112,32 @@
                 style="max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px;">
                 <div class="experience-card"
                     style="background: var(--glass-bg); border: 1px solid var(--glass-border); border-radius: 20px; padding: 30px; backdrop-filter: blur(10px);">
-                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; flex-wrap: wrap; gap: 10px;">
                         <div>
                             <h3 style="font-size: 1.5rem; margin-bottom: 5px;">Data Analyst Intern</h3>
                             <p style="color: var(--accent-1); font-weight: 600;">Innovexis : Remote</p>
                         </div>
-                        <span style="color: var(--text-secondary); font-size: 0.9rem; padding: 5px 15px; background: rgba(255,255,255,0.05); border-radius: 20px; height: fit-content;">FEB 2026 - MAY 2026</span>
+                        <span
+                            style="color: var(--text-secondary); font-size: 0.9rem; padding: 5px 15px; background: rgba(255,255,255,0.05); border-radius: 20px; height: fit-content;">FEB
+                            2026 - MAY 2026</span>
                     </div>
 
-                    <div style="display: flex; justify-content: space-between; align-items: center; gap: 30px; flex-wrap: wrap;">
-                        <ul style="color: var(--text-secondary); line-height: 1.8; margin-left: 20px; flex: 1; min-width: 250px;">
+                    <div
+                        style="display: flex; justify-content: space-between; align-items: center; gap: 30px; flex-wrap: wrap;">
+                        <ul
+                            style="color: var(--text-secondary); line-height: 1.8; margin-left: 20px; flex: 1; min-width: 250px;">
                             <li>Conducted advanced exploratory data analysis (EDA) and SQL querying.</li>
-                            <li>Built interactive BI dashboards including Dubai House Price and PhonePe Pulse visualizations.</li>
-                            <li>Produced deep-dive reports on sales analytics, customer segmentation, and cluster profiling.</li>
+                            <li>Built interactive BI dashboards including Dubai House Price and PhonePe Pulse
+                                visualizations.</li>
+                            <li>Produced deep-dive reports on sales analytics, customer segmentation, and cluster
+                                profiling.</li>
                         </ul>
-                        
-                        <div style="background: #ffffff; padding: 15px; border-radius: 15px; width: 140px; height: 140px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.2); flex-shrink: 0;">
-                            <img src="{{ url_for('static', filename='assets/images/logoh1.png') }}" alt="Innovexis Logo" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+
+                        <div
+                            style="background: #ffffff; padding: 15px; border-radius: 15px; width: 140px; height: 140px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(0,0,0,0.2); flex-shrink: 0;">
+                            <img src="{{ url_for('static', filename='assets/images/logoh1.png') }}" alt="Innovexis Logo"
+                                style="max-width: 100%; max-height: 100%; object-fit: contain;">
                         </div>
                     </div>
                 </div>
@@ -142,34 +151,103 @@
             </div>
 
             <div class="cert-grid"
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto;">
-                <!-- Certificate 1 -->
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto;">
+
+                <!-- Data Science Certificates -->
                 <div class="cert-card">
                     <div class="cert-image"
                         style="height: 200px; background: rgba(138, 43, 226, 0.1); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--glass-border);">
-                        <span style="font-size: 4rem;">📜</span>
+                        <span style="font-size: 4rem;">🐍</span>
                     </div>
                     <div style="padding: 25px; text-align: center;">
-                        <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Data Science Specialization</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px;">Issued by
-                            Authorized Platform</p>
-                        <a href="#" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.9rem;">View
-                            Credential</a>
+                        <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Python</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px;">Data Science Certification</p>
+                        <a href="{{ url_for('static', filename='assets/certificates/Datascience/Python.pdf') }}" target="_blank" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.9rem;">View Credential</a>
                     </div>
                 </div>
 
-                <!-- Certificate 2 -->
                 <div class="cert-card">
                     <div class="cert-image"
                         style="height: 200px; background: rgba(138, 43, 226, 0.1); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--glass-border);">
-                        <span style="font-size: 4rem;">🎓</span>
+                        <span style="font-size: 4rem;">🗄️</span>
                     </div>
                     <div style="padding: 25px; text-align: center;">
-                        <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Full-Stack Web Development</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px;">Issued by
-                            Authorized Platform</p>
-                        <a href="#" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.9rem;">View
-                            Credential</a>
+                        <h3 style="font-size: 1.3rem; margin-bottom: 10px;">SQL</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px;">Data Science Certification</p>
+                        <a href="{{ url_for('static', filename='assets/certificates/Datascience/SQL.pdf') }}" target="_blank" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.9rem;">View Credential</a>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-image"
+                        style="height: 200px; background: rgba(138, 43, 226, 0.1); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--glass-border);">
+                        <span style="font-size: 4rem;">📊</span>
+                    </div>
+                    <div style="padding: 25px; text-align: center;">
+                        <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Excel</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px;">Data Science Certification</p>
+                        <a href="{{ url_for('static', filename='assets/certificates/Datascience/Excel.pdf') }}" target="_blank" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.9rem;">View Credential</a>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-image"
+                        style="height: 200px; background: rgba(138, 43, 226, 0.1); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--glass-border);">
+                        <span style="font-size: 4rem;">📈</span>
+                    </div>
+                    <div style="padding: 25px; text-align: center;">
+                        <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Tableau</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px;">Data Science Certification</p>
+                        <a href="{{ url_for('static', filename='assets/certificates/Datascience/Tableu.pdf') }}" target="_blank" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.9rem;">View Credential</a>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-image"
+                        style="height: 200px; background: rgba(138, 43, 226, 0.1); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--glass-border);">
+                        <span style="font-size: 4rem;">🔬</span>
+                    </div>
+                    <div style="padding: 25px; text-align: center;">
+                        <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Foundation of Data Science</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px;">Data Science Certification</p>
+                        <a href="{{ url_for('static', filename='assets/certificates/Datascience/Foundation-of-DataScience.pdf') }}" target="_blank" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.9rem;">View Credential</a>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-image"
+                        style="height: 200px; background: rgba(138, 43, 226, 0.1); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--glass-border);">
+                        <span style="font-size: 4rem;">⏳</span>
+                    </div>
+                    <div style="padding: 25px; text-align: center;">
+                        <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Time Series Forecasting</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px;">Data Science Certification</p>
+                        <a href="{{ url_for('static', filename='assets/certificates/Datascience/Time-series-forecasting.pdf') }}" target="_blank" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.9rem;">View Credential</a>
+                    </div>
+                </div>
+
+                <!-- Internship Certificates -->
+                <div class="cert-card">
+                    <div class="cert-image"
+                        style="height: 200px; background: rgba(16, 185, 129, 0.1); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--glass-border);">
+                        <span style="font-size: 4rem;">🏢</span>
+                    </div>
+                    <div style="padding: 25px; text-align: center;">
+                        <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Innovexis Internship</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px;">Data Analyst Intern — Innovexis</p>
+                        <a href="{{ url_for('static', filename='assets/certificates/Internships/Innovexis_Certificate.pdf') }}" target="_blank" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.9rem;">View Credential</a>
+                    </div>
+                </div>
+
+                <div class="cert-card">
+                    <div class="cert-image"
+                        style="height: 200px; background: rgba(16, 185, 129, 0.1); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--glass-border);">
+                        <span style="font-size: 4rem;">✈️</span>
+                    </div>
+                    <div style="padding: 25px; text-align: center;">
+                        <h3 style="font-size: 1.3rem; margin-bottom: 10px;">British Airways</h3>
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px;">Virtual Experience Program</p>
+                        <a href="{{ url_for('static', filename='assets/certificates/Internships/british airways.pdf') }}" target="_blank" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.9rem;">View Credential</a>
                     </div>
                 </div>
             </div>
@@ -274,7 +352,8 @@
                 <h2>Let's build something <span class="gradient-text">incredible</span></h2>
                 <p>Are you looking for a creative developer to bring your idea to life? Let's connect!</p>
                 <form class="contact-form" id="contactForm" action="/api/contact" method="post">
-                    <div style="position: absolute; left: -5000px; top: auto; width: 1px; height: 1px; overflow: hidden;" aria-hidden="true">
+                    <div style="position: absolute; left: -5000px; top: auto; width: 1px; height: 1px; overflow: hidden;"
+                        aria-hidden="true">
                         <label for="website">Leave this field empty</label>
                         <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
                     </div>
@@ -288,7 +367,9 @@
                         <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary submit-btn">Send Message</button>
-                    <p id="contactStatus" data-status="{{ request.args.get('contact_status', '') }}" aria-live="polite" style="margin-top: 12px; min-height: 24px; color: var(--text-secondary);">{{ request.args.get('contact_message', '') }}</p>
+                    <p id="contactStatus" data-status="{{ request.args.get('contact_status', '') }}" aria-live="polite"
+                        style="margin-top: 12px; min-height: 24px; color: var(--text-secondary);">{{
+                        request.args.get('contact_message', '') }}</p>
                 </form>
             </div>
         </section>
