@@ -146,4 +146,31 @@ document.addEventListener('DOMContentLoaded', () => {
             navbar.style.boxShadow = 'none';
         }
     });
+
+    // Interactive Certificates tab switcher
+    const certCategoryBoxes = document.querySelectorAll('.cert-category-box');
+    const certPanels = document.querySelectorAll('.cert-panel');
+
+    certCategoryBoxes.forEach(box => {
+        box.addEventListener('click', () => {
+            const targetId = box.getAttribute('data-target');
+            
+            // Toggle active class on boxes
+            certCategoryBoxes.forEach(b => b.classList.remove('active'));
+            box.classList.add('active');
+
+            // Toggle active class on panels with smooth transitions
+            certPanels.forEach(panel => {
+                if (panel.id === targetId) {
+                    panel.style.display = 'block';
+                    // Force reflow to ensure transition registers
+                    panel.offsetHeight;
+                    panel.classList.add('active');
+                } else {
+                    panel.classList.remove('active');
+                    panel.style.display = 'none';
+                }
+            });
+        });
+    });
 });

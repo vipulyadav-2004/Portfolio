@@ -150,104 +150,127 @@
                 <p>Verified achievements and continuous learning</p>
             </div>
 
-            <div class="cert-grid"
-                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto;">
+            <!-- Category Selector Boxes -->
+            <div class="cert-categories">
+                <div class="cert-category-box active" data-target="ds-panel">
+                    <span class="cert-category-badge">6</span>
+                    <span class="cert-category-icon">📊</span>
+                    <h3>Data Science</h3>
+                    <p>Python, SQL, Tableau, Excel, and forecasting credentials</p>
+                </div>
+                <div class="cert-category-box" data-target="internship-panel">
+                    <span class="cert-category-badge">2</span>
+                    <span class="cert-category-icon">💼</span>
+                    <h3>Internships</h3>
+                    <p>Professional industry & virtual experience certificates</p>
+                </div>
+            </div>
 
-                <!-- Data Science Certificates -->
-                <div class="cert-card">
-                    <div class="cert-image"
-                        style="height: 200px; background: rgba(138, 43, 226, 0.1); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--glass-border);">
-                        <span style="font-size: 4rem;">🐍</span>
-                    </div>
-                    <div style="padding: 25px; text-align: center;">
-                        <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Python</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px;">Data Science Certification</p>
-                        <a href="{{ url_for('static', filename='assets/certificates/Datascience/Python.pdf') }}" target="_blank" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.9rem;">View Credential</a>
+            <!-- Certificate Grids (Toggleable Panels) -->
+            <div class="cert-panels-container">
+                <!-- Data Science Panel (Active by default) -->
+                <div class="cert-panel active" id="ds-panel">
+                    <div class="cert-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto;">
+                        <div class="cert-card">
+                            <div class="cert-image"
+                                style="height: 200px; background: rgba(138, 43, 226, 0.1); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--glass-border);">
+                                <span style="font-size: 4rem;">🐍</span>
+                            </div>
+                            <div style="padding: 25px; text-align: center;">
+                                <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Python</h3>
+                                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px;">Data Science Certification</p>
+                                <a href="{{ url_for('static', filename='assets/certificates/Datascience/Python.pdf') }}" target="_blank" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.9rem;">View Credential</a>
+                            </div>
+                        </div>
+
+                        <div class="cert-card">
+                            <div class="cert-image"
+                                style="height: 200px; background: rgba(138, 43, 226, 0.1); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--glass-border);">
+                                <span style="font-size: 4rem;">🗄️</span>
+                            </div>
+                            <div style="padding: 25px; text-align: center;">
+                                <h3 style="font-size: 1.3rem; margin-bottom: 10px;">SQL</h3>
+                                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px;">Data Science Certification</p>
+                                <a href="{{ url_for('static', filename='assets/certificates/Datascience/SQL.pdf') }}" target="_blank" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.9rem;">View Credential</a>
+                            </div>
+                        </div>
+
+                        <div class="cert-card">
+                            <div class="cert-image"
+                                style="height: 200px; background: rgba(138, 43, 226, 0.1); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--glass-border);">
+                                <span style="font-size: 4rem;">📊</span>
+                            </div>
+                            <div style="padding: 25px; text-align: center;">
+                                <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Excel</h3>
+                                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px;">Data Science Certification</p>
+                                <a href="{{ url_for('static', filename='assets/certificates/Datascience/Excel.pdf') }}" target="_blank" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.9rem;">View Credential</a>
+                            </div>
+                        </div>
+
+                        <div class="cert-card">
+                            <div class="cert-image"
+                                style="height: 200px; background: rgba(138, 43, 226, 0.1); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--glass-border);">
+                                <span style="font-size: 4rem;">📈</span>
+                            </div>
+                            <div style="padding: 25px; text-align: center;">
+                                <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Tableau</h3>
+                                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px;">Data Science Certification</p>
+                                <a href="{{ url_for('static', filename='assets/certificates/Datascience/Tableu.pdf') }}" target="_blank" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.9rem;">View Credential</a>
+                            </div>
+                        </div>
+
+                        <div class="cert-card">
+                            <div class="cert-image"
+                                style="height: 200px; background: rgba(138, 43, 226, 0.1); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--glass-border);">
+                                <span style="font-size: 4rem;">🔬</span>
+                            </div>
+                            <div style="padding: 25px; text-align: center;">
+                                <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Foundation of Data Science</h3>
+                                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px;">Data Science Certification</p>
+                                <a href="{{ url_for('static', filename='assets/certificates/Datascience/Foundation-of-DataScience.pdf') }}" target="_blank" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.9rem;">View Credential</a>
+                            </div>
+                        </div>
+
+                        <div class="cert-card">
+                            <div class="cert-image"
+                                style="height: 200px; background: rgba(138, 43, 226, 0.1); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--glass-border);">
+                                <span style="font-size: 4rem;">⏳</span>
+                            </div>
+                            <div style="padding: 25px; text-align: center;">
+                                <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Time Series Forecasting</h3>
+                                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px;">Data Science Certification</p>
+                                <a href="{{ url_for('static', filename='assets/certificates/Datascience/Time-series-forecasting.pdf') }}" target="_blank" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.9rem;">View Credential</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="cert-card">
-                    <div class="cert-image"
-                        style="height: 200px; background: rgba(138, 43, 226, 0.1); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--glass-border);">
-                        <span style="font-size: 4rem;">🗄️</span>
-                    </div>
-                    <div style="padding: 25px; text-align: center;">
-                        <h3 style="font-size: 1.3rem; margin-bottom: 10px;">SQL</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px;">Data Science Certification</p>
-                        <a href="{{ url_for('static', filename='assets/certificates/Datascience/SQL.pdf') }}" target="_blank" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.9rem;">View Credential</a>
-                    </div>
-                </div>
+                <!-- Internship Panel (Hidden by default) -->
+                <div class="cert-panel" id="internship-panel">
+                    <div class="cert-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto;">
+                        <div class="cert-card">
+                            <div class="cert-image"
+                                style="height: 200px; background: rgba(16, 185, 129, 0.1); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--glass-border);">
+                                <span style="font-size: 4rem;">🏢</span>
+                            </div>
+                            <div style="padding: 25px; text-align: center;">
+                                <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Innovexis Internship</h3>
+                                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px;">Data Analyst Intern — Innovexis</p>
+                                <a href="{{ url_for('static', filename='assets/certificates/Internships/Innovexis_Certificate.pdf') }}" target="_blank" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.9rem;">View Credential</a>
+                            </div>
+                        </div>
 
-                <div class="cert-card">
-                    <div class="cert-image"
-                        style="height: 200px; background: rgba(138, 43, 226, 0.1); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--glass-border);">
-                        <span style="font-size: 4rem;">📊</span>
-                    </div>
-                    <div style="padding: 25px; text-align: center;">
-                        <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Excel</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px;">Data Science Certification</p>
-                        <a href="{{ url_for('static', filename='assets/certificates/Datascience/Excel.pdf') }}" target="_blank" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.9rem;">View Credential</a>
-                    </div>
-                </div>
-
-                <div class="cert-card">
-                    <div class="cert-image"
-                        style="height: 200px; background: rgba(138, 43, 226, 0.1); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--glass-border);">
-                        <span style="font-size: 4rem;">📈</span>
-                    </div>
-                    <div style="padding: 25px; text-align: center;">
-                        <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Tableau</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px;">Data Science Certification</p>
-                        <a href="{{ url_for('static', filename='assets/certificates/Datascience/Tableu.pdf') }}" target="_blank" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.9rem;">View Credential</a>
-                    </div>
-                </div>
-
-                <div class="cert-card">
-                    <div class="cert-image"
-                        style="height: 200px; background: rgba(138, 43, 226, 0.1); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--glass-border);">
-                        <span style="font-size: 4rem;">🔬</span>
-                    </div>
-                    <div style="padding: 25px; text-align: center;">
-                        <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Foundation of Data Science</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px;">Data Science Certification</p>
-                        <a href="{{ url_for('static', filename='assets/certificates/Datascience/Foundation-of-DataScience.pdf') }}" target="_blank" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.9rem;">View Credential</a>
-                    </div>
-                </div>
-
-                <div class="cert-card">
-                    <div class="cert-image"
-                        style="height: 200px; background: rgba(138, 43, 226, 0.1); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--glass-border);">
-                        <span style="font-size: 4rem;">⏳</span>
-                    </div>
-                    <div style="padding: 25px; text-align: center;">
-                        <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Time Series Forecasting</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px;">Data Science Certification</p>
-                        <a href="{{ url_for('static', filename='assets/certificates/Datascience/Time-series-forecasting.pdf') }}" target="_blank" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.9rem;">View Credential</a>
-                    </div>
-                </div>
-
-                <!-- Internship Certificates -->
-                <div class="cert-card">
-                    <div class="cert-image"
-                        style="height: 200px; background: rgba(16, 185, 129, 0.1); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--glass-border);">
-                        <span style="font-size: 4rem;">🏢</span>
-                    </div>
-                    <div style="padding: 25px; text-align: center;">
-                        <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Innovexis Internship</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px;">Data Analyst Intern — Innovexis</p>
-                        <a href="{{ url_for('static', filename='assets/certificates/Internships/Innovexis_Certificate.pdf') }}" target="_blank" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.9rem;">View Credential</a>
-                    </div>
-                </div>
-
-                <div class="cert-card">
-                    <div class="cert-image"
-                        style="height: 200px; background: rgba(16, 185, 129, 0.1); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--glass-border);">
-                        <span style="font-size: 4rem;">✈️</span>
-                    </div>
-                    <div style="padding: 25px; text-align: center;">
-                        <h3 style="font-size: 1.3rem; margin-bottom: 10px;">British Airways</h3>
-                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px;">Virtual Experience Program</p>
-                        <a href="{{ url_for('static', filename='assets/certificates/Internships/british airways.pdf') }}" target="_blank" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.9rem;">View Credential</a>
+                        <div class="cert-card">
+                            <div class="cert-image"
+                                style="height: 200px; background: rgba(16, 185, 129, 0.1); display: flex; align-items: center; justify-content: center; border-bottom: 1px solid var(--glass-border);">
+                                <span style="font-size: 4rem;">✈️</span>
+                            </div>
+                            <div style="padding: 25px; text-align: center;">
+                                <h3 style="font-size: 1.3rem; margin-bottom: 10px;">British Airways</h3>
+                                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 20px;">Virtual Experience Program</p>
+                                <a href="{{ url_for('static', filename='assets/certificates/Internships/british airways.pdf') }}" target="_blank" class="btn btn-secondary" style="padding: 10px 20px; font-size: 0.9rem;">View Credential</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
