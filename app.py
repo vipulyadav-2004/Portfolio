@@ -174,8 +174,8 @@ PROJECTS = {
             'subcategory': 'eda',
             'description': 'A comprehensive analysis and visualization project exploring IPL cricket match data, uncovering scoring patterns, team performance metrics, and player statistics through interactive charts and dashboards.',
             'image': 'https://images.unsplash.com/photo-1531415074968-036ba1b575da?q=80&w=2067&auto=format&fit=crop',
-            'demo_link': 'https://github.com/vipulyadav-2004/IPL-Score-Metrics-Analysis',
-            'code_link': 'https://github.com/vipulyadav-2004/IPL-Score-Metrics-Analysis'
+            'demo_link': 'https://vipulyadav-2004-ipl-metrics-analysis-streamlit-app-ehogyw.streamlit.app/',
+            'code_link': 'https://github.com/vipulyadav-2004/IPL_metrics_analysis'
         },
         {
             'id': 'customer-churn-prediction',
@@ -184,8 +184,8 @@ PROJECTS = {
             'subcategory': 'ml',
             'description': 'A survival analysis model leveraging the Cox Proportional Hazards framework to predict customer churn probability over time, identifying key risk factors and estimating customer lifetime with hazard ratios and survival curves.',
             'image': 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
-            'demo_link': 'https://github.com/vipulyadav-2004/Customer-Churn-Prediction',
-            'code_link': 'https://github.com/vipulyadav-2004/Customer-Churn-Prediction'
+            'demo_link': 'https://vipulyadav-2004-customer-churn-prediction-survival-app-p7mhjw.streamlit.app/',
+            'code_link': 'https://github.com/vipulyadav-2004/customer-churn-Prediction'
         },
         {
             'id': 'resume-screening-app',
@@ -194,8 +194,8 @@ PROJECTS = {
             'subcategory': 'nlp',
             'description': 'An intelligent resume screening application that ranks and filters candidate resumes using TF-IDF vectorization and Sentence Transformers for semantic similarity matching, streamlining the recruitment pipeline.',
             'image': 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=2070&auto=format&fit=crop',
-            'demo_link': 'https://github.com/vipulyadav-2004/Resume-Screening-App',
-            'code_link': 'https://github.com/vipulyadav-2004/Resume-Screening-App'
+            'demo_link': 'https://github.com/vipulyadav-2004/Resume_screening_app',
+            'code_link': 'https://github.com/vipulyadav-2004/Resume_screening_app'
         },
         {
             'id': 'face-mask-detector',
@@ -204,8 +204,8 @@ PROJECTS = {
             'subcategory': 'deep-learning','cv'
             'description': 'A real-time face mask detection system combining OpenCV Cascade Classifiers for face localization with a neural network built using PyTorch\'s nn module and Torchvision for mask/no-mask classification on live video feeds.',
             'image': 'https://images.unsplash.com/photo-1585559604959-6388fe69c92a?q=80&w=2070&auto=format&fit=crop',
-            'demo_link': 'https://github.com/vipulyadav-2004/Face-Mask-Detector',
-            'code_link': 'https://github.com/vipulyadav-2004/Face-Mask-Detector'
+            'demo_link': 'https://github.com/vipulyadav-2004/Face_mask_detector',
+            'code_link': 'https://github.com/vipulyadav-2004/Face_mask_detector'
         }
     ],
     'web-development': [
@@ -215,28 +215,27 @@ PROJECTS = {
             'category': 'A Dedicated Platform for Writers and Poets',
             'description': 'A full-stack web application tailored for writers and poets to publish their work and build an audience.',
             'image': 'assets/images/Ayushara.png',
-            'demo_link': '#',
+            'demo_link': 'writers-hub-wine.vercel.app',
             'code_link': 'https://github.com/vipulyadav-2004/Ayushara'
         },
-        {
-            'id': 'flask-todo',
-            'title': 'To-Do App (Flask)',
-            'category': 'Full-Stack Python Backend',
-            'description': 'A robust To-Do list application built with a Flask backend to manage tasks efficiently, featuring full CRUD operations and dynamic routing.',
-            'image': 'https://images.unsplash.com/photo-1540350394557-8d14678e7f91?q=80&w=2032&auto=format&fit=crop',
-            'demo_link': '#',
-            'code_link': 'https://github.com/vipulyadav-2004/Flask-Todo-App'
+       {
+            'id': 'resume-screening-app',
+            'title': 'Resume Screening App',
+            'category': 'Machine Learning - NLP',
+            'description': 'An intelligent resume screening application that ranks and filters candidate resumes using TF-IDF vectorization and Sentence Transformers for semantic similarity matching, streamlining the recruitment pipeline.',
+            'image': 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=2070&auto=format&fit=crop',
+            'demo_link': 'https://resume-screening-app-plum.vercel.app/',
+            'code_link': 'https://github.com/vipulyadav-2004/Resume_screening_app'
         },
         {
-            'id': 'weather-web',
-            'title': 'Weather Web App',
-            'category': 'Frontend / HTML, CSS, JS',
-            'description': 'A dynamic weather forecasting application built purely with HTML, CSS, and Vanilla JavaScript, integrating asynchronous live API data.',
-            'image': 'https://images.unsplash.com/photo-1592210454359-9043f067919b?q=80&w=2070&auto=format&fit=crop',
-            'demo_link': 'https://collaborative-todo-uagn.onrender.com/',
-            'code_link': 'https://github.com/vipulyadav-2004/Weather-Web-App'
-        },
-      
+            'id': 'face-mask-detector',
+            'title': 'Face Mask Detector',
+            'category': 'OpenCV & Deep Learning',
+            'description': 'A real-time face mask detection system combining OpenCV Cascade Classifiers for face localization with a neural network built using PyTorch\'s nn module and Torchvision for mask/no-mask classification on live video feeds.',
+            'image': 'https://images.unsplash.com/photo-1585559604959-6388fe69c92a?q=80&w=2070&auto=format&fit=crop',
+            'demo_link': 'https://face-mask-detector-gold.vercel.app/',
+            'code_link': 'https://github.com/vipulyadav-2004/Face_mask_detector'
+        }
     ],
     'internship-work': [
         {
@@ -245,7 +244,6 @@ PROJECTS = {
             'category': 'Dashboarding / BI',
             'description': 'A comprehensive BI dashboard analyzing historical Dubai real estate pricing trends and spatial house market distributions.',
             'image': 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2070&auto=format&fit=crop',
-            'demo_link': '#',
             'code_link': 'https://github.com/vipulyadav-2004/Dubai-House-Price-Analysis'
         },
         {
@@ -254,7 +252,6 @@ PROJECTS = {
             'category': 'Data Visualization / Interactive Dashboard',
             'description': 'An interactive visualization suite that renders India-wide transaction metrics and trends utilizing PhonePe open pulse data.',
             'image': 'assets/images/Phonepe.webp',
-            'demo_link': '#',
             'code_link': 'https://github.com/vipulyadav-2004/PhonePe-Pulse'
         },
         {
@@ -263,7 +260,6 @@ PROJECTS = {
             'category': 'EDA + SQL + Dashboard',
             'description': 'An end-to-end data pipeline containing exploratory data analysis (EDA), advanced SQL querying, and a final BI dashboard tracking global game sales.',
             'image': 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=2070&auto=format&fit=crop',
-            'demo_link': '#',
             'code_link': 'https://github.com/vipulyadav-2004/Video-Game-Sales-Analysis'
         },
          {
@@ -272,7 +268,7 @@ PROJECTS = {
             'category': 'EDA + SQL + Streamlit',
             'description': 'An end-to-end data pipeline containing exploratory data analysis (EDA), advanced SQL querying, and a final streamlit dashboard tracking global birds species.',
             'image': 'https://images.unsplash.com/photo-1484704324500-528d0ae4dc7d?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-            'demo_link': '#',
+            'demo_link':'https://vipulyadavbirdspeciesobservation.streamlit.app/',
             'code_link': 'https://github.com/vipulyadav-2004/Bird-Species-Analysis'
         },
          {
@@ -281,7 +277,7 @@ PROJECTS = {
             'category': 'EDA + SQL + Streamlit',
             'description': 'An end-to-end data pipeline containing exploratory data analysis (EDA), advanced SQL querying, and a final streamlit web for food waste management.',
             'image': 'https://images.unsplash.com/photo-1542624771497-851f77d79349?q=80&w=866&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-            'demo_link': '#',
+            'demo_link': 'https://vipulyadav.streamlit.app/',
             'code_link': 'https://github.com/vipulyadav-2004/Food-Waste-Management'
         }
     ]
