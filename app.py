@@ -194,6 +194,46 @@ PROJECTS = {
             'image': 'https://images.unsplash.com/photo-1559757175-5700dde675bc?q=80&w=2070&auto=format&fit=crop',
             'demo_link': 'https://github.com/vipulyadav-2004/Brain-Tumor-Segmentation',
             'code_link': 'https://github.com/vipulyadav-2004/Brain-Tumor-Segmentation'
+        },
+        {
+            'id': 'ipl-score-metrics',
+            'title': 'IPL Score Metrics Analysis',
+            'category': 'Analysis & Visualization',
+            'subcategory': 'eda',
+            'description': 'A comprehensive analysis and visualization project exploring IPL cricket match data, uncovering scoring patterns, team performance metrics, and player statistics through interactive charts and dashboards.',
+            'image': 'https://images.unsplash.com/photo-1531415074968-036ba1b575da?q=80&w=2067&auto=format&fit=crop',
+            'demo_link': 'https://github.com/vipulyadav-2004/IPL-Score-Metrics-Analysis',
+            'code_link': 'https://github.com/vipulyadav-2004/IPL-Score-Metrics-Analysis'
+        },
+        {
+            'id': 'customer-churn-prediction',
+            'title': 'Customer Churn Prediction',
+            'category': 'Machine Learning - Survival Analysis',
+            'subcategory': 'ml',
+            'description': 'A survival analysis model leveraging the Cox Proportional Hazards framework to predict customer churn probability over time, identifying key risk factors and estimating customer lifetime with hazard ratios and survival curves.',
+            'image': 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
+            'demo_link': 'https://github.com/vipulyadav-2004/Customer-Churn-Prediction',
+            'code_link': 'https://github.com/vipulyadav-2004/Customer-Churn-Prediction'
+        },
+        {
+            'id': 'resume-screening-app',
+            'title': 'Resume Screening App',
+            'category': 'Machine Learning - NLP',
+            'subcategory': 'nlp',
+            'description': 'An intelligent resume screening application that ranks and filters candidate resumes using TF-IDF vectorization and Sentence Transformers for semantic similarity matching, streamlining the recruitment pipeline.',
+            'image': 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=2070&auto=format&fit=crop',
+            'demo_link': 'https://github.com/vipulyadav-2004/Resume-Screening-App',
+            'code_link': 'https://github.com/vipulyadav-2004/Resume-Screening-App'
+        },
+        {
+            'id': 'face-mask-detector',
+            'title': 'Face Mask Detector',
+            'category': 'OpenCV & Deep Learning',
+            'subcategory': 'deep-learning',
+            'description': 'A real-time face mask detection system combining OpenCV Cascade Classifiers for face localization with a neural network built using PyTorch\'s nn module and Torchvision for mask/no-mask classification on live video feeds.',
+            'image': 'https://images.unsplash.com/photo-1585559604959-6388fe69c92a?q=80&w=2070&auto=format&fit=crop',
+            'demo_link': 'https://github.com/vipulyadav-2004/Face-Mask-Detector',
+            'code_link': 'https://github.com/vipulyadav-2004/Face-Mask-Detector'
         }
     ],
     'web-development': [
