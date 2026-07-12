@@ -165,36 +165,8 @@ PROJECTS = {
             'demo_link': 'https://github.com/vipulyadav-2004/Customer-Segmentation-RFM',
             'code_link': 'https://github.com/vipulyadav-2004/Customer-Segmentation-RFM'
         },
-        {
-            'id': 'netflix-eda',
-            'title': 'Netflix Movies & TV Shows EDA',
-            'category': 'Exploratory Data Analysis & Visualization',
-            'subcategory': 'eda',
-            'description': 'An in-depth exploratory data analysis of Netflix content dataset. Cleansed and structured the raw dataset to extract insights regarding content growth over the years, geographic distribution of titles, and genre preferences using Matplotlib and Seaborn.',
-            'image': 'https://images.unsplash.com/photo-1574375927938-d5a98e8edd86?q=80&w=2070&auto=format&fit=crop',
-            'demo_link': 'https://github.com/vipulyadav-2004/Netflix-Data-Analysis',
-            'code_link': 'https://github.com/vipulyadav-2004/Netflix-Data-Analysis'
-        },
-        {
-            'id': 'sentiment-analyzer',
-            'title': 'BERT Sentiment Analyzer',
-            'category': 'Natural Language Processing',
-            'subcategory': 'nlp',
-            'description': 'A Natural Language Processing model utilizing fine-tuned BERT (Bidirectional Encoder Representations from Transformers) to perform sentiment analysis on movie and product reviews. Built using PyTorch and Hugging Face library, achieving high classification accuracy.',
-            'image': 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop',
-            'demo_link': 'https://github.com/vipulyadav-2004/Sentiment-Analysis',
-            'code_link': 'https://github.com/vipulyadav-2004/Sentiment-Analysis'
-        },
-        {
-            'id': 'brain-tumor-segmentation',
-            'title': 'Brain Tumor MRI Segmentation',
-            'category': 'Deep Learning / Medical Image Vision',
-            'subcategory': 'deep-learning',
-            'description': 'A medical image segmentation pipeline utilizing a deep Convolutional Neural Network (U-Net) to identify and segment brain tumors in MRI scans. Optimized using dice loss and binary cross-entropy, delivering high intersection-over-union scores for medical diagnostics.',
-            'image': 'https://images.unsplash.com/photo-1559757175-5700dde675bc?q=80&w=2070&auto=format&fit=crop',
-            'demo_link': 'https://github.com/vipulyadav-2004/Brain-Tumor-Segmentation',
-            'code_link': 'https://github.com/vipulyadav-2004/Brain-Tumor-Segmentation'
-        },
+      
+      
         {
             'id': 'ipl-score-metrics',
             'title': 'IPL Score Metrics Analysis',
@@ -229,7 +201,7 @@ PROJECTS = {
             'id': 'face-mask-detector',
             'title': 'Face Mask Detector',
             'category': 'OpenCV & Deep Learning',
-            'subcategory': 'deep-learning',
+            'subcategory': 'deep-learning','cv'
             'description': 'A real-time face mask detection system combining OpenCV Cascade Classifiers for face localization with a neural network built using PyTorch\'s nn module and Torchvision for mask/no-mask classification on live video feeds.',
             'image': 'https://images.unsplash.com/photo-1585559604959-6388fe69c92a?q=80&w=2070&auto=format&fit=crop',
             'demo_link': 'https://github.com/vipulyadav-2004/Face-Mask-Detector',
